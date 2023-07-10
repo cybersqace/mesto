@@ -23,7 +23,7 @@ Mesto: интерактивной страница, где можно добав
 - JavaScript;
 
 ## Ссылка на сайт
-* https://cybersqace.github.io/russian-travel/index.html
+* https://cybersqace.github.io/mesto/
 
 ## Ссылка на макет в Figma
 
