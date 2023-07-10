@@ -1,0 +1,15 @@
+.cards__element_group_like-button {
+  padding: 0;
+  width: 22px;
+  height: 19px;
+  background: url(../../../../../images/likebutton.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 0;
+  cursor: pointer;
+  transition: opacity 1s;
+}
+
+.cards__element_group_like-button:hover {
+  opacity: 40%;
+}

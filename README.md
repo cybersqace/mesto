@@ -1,17 +1,30 @@
-# Проект: Место
+# «Mesto» - проектная работа для Яндекс.Практикум
 
-### Обзор
+## Описание проекта
+Mesto: интерактивной страница, где можно добавлять фотографии, удалять их и ставить лайки.
 
-* Figma
-* Картинки
+### Скриншот
+<details><summary><b>Развернуть</b></summary>
+<img src="https://i.ibb.co/XzWzwvj/image.png" alt="image" border="0" alt="скриншот">
+</details>
 
-**Figma**
+## Функционал
+- Возможность редактирования имени и информации о себе
+- Адаптивный интерфейс для разных устройств
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
+## Использованые технологии
+- HTML5;
+- CSS3:
+  - Flexbox;
+  - Grid Layout;
+  - Adaptive UI;
+  - Media Queries;
+- Файловая структура Nested БЭМ;
+- JavaScript;
 
-**Картинки**
+## Ссылка на сайт
+* https://cybersqace.github.io/russian-travel/index.html
 
-Доставать картинки предстоит из Фигмы. Это расхожая практика, поэтому полезно потренироваться.
-Не забудьте [оптимизировать картинки](https://tinypng.com/), чтобы ваш сайт загружался быстрее.
+## Ссылка на макет в Figma
 
-Удачи!
+* [Макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
