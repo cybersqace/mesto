@@ -11,8 +11,8 @@ popupCloseButton.addEventListener('click', popupToggle);
 
 let formElement = document.querySelector('.popup__form');
 
-let nameInput = formElement.querySelector('.popup__form_name');
-let jobInput = formElement.querySelector('.popup__form_job');
+let nameInput = formElement.querySelector('.popup__form-name');
+let jobInput = formElement.querySelector('.popup__form-job');
 
 function handleFormSubmit (evt) {
     evt.preventDefault(); 
