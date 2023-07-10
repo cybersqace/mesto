@@ -15,6 +15,6 @@
 @media screen and (max-width:1279px) {
   .popup__save {
     width: calc(238px + (358 - 238) * ((100vw - 320px) / (1279 - 320)));
-    height: calc(46px + (50 - 46) * ((100vw - 320px) / (1279 - 320)));;
+    height: calc(46px + (50 - 46) * ((100vw - 320px) / (1279 - 320)));
   }
 }
