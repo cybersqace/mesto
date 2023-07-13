@@ -7,7 +7,6 @@
   background-repeat: no-repeat;
   background-size: contain;
   align-self: center;
-  border: 1px;
   cursor: pointer;
   transition: opacity 1s;
 }

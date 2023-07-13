@@ -4,8 +4,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 25px;
-  margin-bottom: 31px;
+  padding-top: 25px;
+  padding-bottom: 31px;
   max-width: 246px;
   max-height: 23px;
 }

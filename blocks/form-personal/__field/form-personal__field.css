@@ -1,9 +1,14 @@
-.popup__form-name {
+.form-personal__field {
   padding-bottom: 13px;
   width: 100%;
+  outline: none;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
   font-family: inherit;
   color: #000;
   font-size: 14px;
+}
+
+.form-personal__field:last-of-type {
+  margin-top: 30px;
 }
