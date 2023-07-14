@@ -13,6 +13,7 @@
   transition: opacity 1s;
   color: #FFF;
   text-align: center;
+  font-family: 'Inter', Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
 }
