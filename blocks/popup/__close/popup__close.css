@@ -23,6 +23,13 @@
   }
 }
 
+@media screen and (max-width:720px) {
+  .popup__close {
+    top: -25px;
+    right: -32px;
+  }
+}
+
 @media screen and (max-width:550px) {
   .popup__close {
     top: -25px;
