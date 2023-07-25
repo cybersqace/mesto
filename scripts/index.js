@@ -40,15 +40,15 @@ const container = document.querySelector('.elements');
 const template = document.querySelector('.cardtemp');
 const cardCreateBtn = document.querySelector('.form-cards__save');
 
-const popupProfile = document.querySelector('.popup__profile');
+const popupProfile = document.querySelector('.popup_type_profile');
 const popupOpenProfButton = document.querySelector('.profile__edit-button');
 const popupCloseProfButton = popupProfile.querySelector('.popup__close');
 
-const popupCards = document.querySelector('.popup__cards');
+const popupCards = document.querySelector('.popup_type_cards');
 const popupOpenCardsButton = document.querySelector('.profile__add-button');
 const popupCloseCardsButton = popupCards.querySelector('.popup__close');
 
-const popupImage = document.querySelector('.popup__image');
+const popupImage = document.querySelector('.popup_type_image');
 const popupPicture = document.querySelector('.popup__picture');
 const popupPictureTitle = document.querySelector('.popup__picture-title');
 const popupClosePictureButton = popupImage.querySelector('.popup__close');
