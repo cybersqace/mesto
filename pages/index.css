@@ -29,13 +29,13 @@
 @import url(../blocks/popup/__container-image/popup__container-image.css);
 @import url(../blocks/popup/__close/popup__close.css);
 @import url(../blocks/popup/__title/popup__title.css);
-@import url(../blocks/popup/__image/popup__image.css);
-@import url(../blocks/popup/__figure/popup__figure.css);
-@import url(../blocks/popup/__picture/popup__picture.css);
-@import url(../blocks/popup/__picture-title/popup__picture-title.css);
 @import url(../blocks/form-personal/form-personal.css);
 @import url(../blocks/form-personal/__field/form-personal__field.css);
 @import url(../blocks/form-personal/__save/form-personal__save.css);
 @import url(../blocks/form-cards/form-cards.css);
 @import url(../blocks/form-cards/__field/form-cards__field.css);
 @import url(../blocks/form-cards/__save/form-cards__save.css);
+@import url(../blocks/popup/_type/popup_type_image.css);
+@import url(../blocks/popup/__figure/popup__figure.css);
+@import url(../blocks/popup/__picture/popup__picture.css);
+@import url(../blocks/popup/__picture-title/popup__picture-title.css);
