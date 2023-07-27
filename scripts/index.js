@@ -1,33 +1,31 @@
-const formElementProfile = document.querySelector('.form-personal');
-const nameInput = formElementProfile.querySelector('.form-personal__field_type_name');
-const jobInput = formElementProfile.querySelector('.form-personal__field_type_job');
-
-const formElementCard = document.querySelector('.form-cards');
-const titleInput = formElementCard.querySelector('.form-cards__field_type_title');
-const linkInput = formElementCard.querySelector('.form-cards__field_type_link');
- 
-const username = document.querySelector('.profile__title');
-const job = document.querySelector('.profile__description');
-
 const container = document.querySelector('.elements');
 const template = document.querySelector('.cardtemp');
-const cardCreateBtn = document.querySelector('.form-cards__save');
 
 const popup = document.querySelectorAll('.popup');
+
 const popupProfile = document.querySelector('.popup_type_profile');
 const popupOpenProfButton = document.querySelector('.profile__edit-button');
 const popupCloseProfButton = popupProfile.querySelector('.popup__close');
+const formElementProfile = document.querySelector('.form-personal');
+const nameInput = formElementProfile.querySelector('.form-personal__field_type_name');
+const jobInput = formElementProfile.querySelector('.form-personal__field_type_job');
+const username = document.querySelector('.profile__title');
+const job = document.querySelector('.profile__description');
 
 const popupCards = document.querySelector('.popup_type_cards');
 const popupOpenCardsButton = document.querySelector('.profile__add-button');
 const popupCloseCardsButton = popupCards.querySelector('.popup__close');
+const formElementCard = document.querySelector('.form-cards');
+const titleInput = formElementCard.querySelector('.form-cards__field_type_title');
+const linkInput = formElementCard.querySelector('.form-cards__field_type_link');
+const cardCreateBtn = document.querySelector('.form-cards__save');
 
 const popupImage = document.querySelector('.popup_type_image');
 const popupPicture = document.querySelector('.popup__picture');
 const popupPictureTitle = document.querySelector('.popup__picture-title');
 const popupClosePictureButton = popupImage.querySelector('.popup__close');
 
-
+//функция создания карточки
 const createElByTemplate = (data) => {
   const el = template.content.cloneNode(true);
   const cardTitle = el.querySelector('.element__title');
@@ -45,7 +43,7 @@ const createElByTemplate = (data) => {
 
   return el;
 };
-
+//просмотр полного изображения
 const initOpenFullImage = (elementImage) => {
   elementImage.addEventListener('click', (evt) => {
     openPopup(popupImage);
@@ -67,14 +65,14 @@ const initCardRemoveListener = (cardDelete) => {
     evt.target.closest('.element').remove();
   });
 };
-
+//загрузка карточек из массива
 const renderInitialCards = () => {
   initialCards.forEach((item) => {
     container.append(createElByTemplate(item));
   });
 
 };
-
+//добавление новой карточки пользователем
 const createEl = () => {
   const newEl = createElByTemplate({ name: titleInput.value, link: linkInput.value });
   container.prepend(newEl);
@@ -119,7 +117,7 @@ popupClosePictureButton.addEventListener('click', () => {
   closePopup(popupImage);
 });
 
-//листенеры форм
+//листенеры submit форм
 formElementProfile.addEventListener('submit', (evt) => {
   evt.preventDefault();
   username.textContent = nameInput.value;
