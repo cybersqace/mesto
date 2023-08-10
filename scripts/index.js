@@ -1,7 +1,7 @@
 const container = document.querySelector('.elements');
 const template = document.querySelector('.cardtemp');
 
-const popup = document.querySelectorAll('.popup');
+const popups = document.querySelectorAll('.popup');
 
 const popupProfile = document.querySelector('.popup_type_profile');
 const popupOpenProfButton = document.querySelector('.profile__edit-button');
@@ -23,6 +23,9 @@ const popupImage = document.querySelector('.popup_type_image');
 const popupPicture = document.querySelector('.popup__picture');
 const popupPictureTitle = document.querySelector('.popup__picture-title');
 const popupClosePictureButton = popupImage.querySelector('.popup__close');
+
+const inputList = Array.from(popupCards.querySelectorAll(`.${validationClassList.inputClass}`));
+const submitButton = popupCards.querySelector(`.${validationClassList.submitButtonClass}`);
 
 //функция создания карточки
 const createElByTemplate = (data) => {
@@ -103,7 +106,7 @@ function popupClosest(evt) {
   return evt.target.closest('.popup');
 };
 //закрытие попапа нажатием на Оверлей
-popup.forEach((item) => {
+popups.forEach((item) => {
   item.addEventListener('click', (evt) => {
     if (evt.target === evt.currentTarget) {
       const popupOverlay = popupClosest(evt);
@@ -111,75 +114,6 @@ popup.forEach((item) => {
     };
   });
 });
-
-//валидация
-//функция добавления класса с ошибкой
-const showInputError = (formElement, inputElement, errorMessage) => {
-  const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-  inputElement.classList.add('form__input_type_error');
-  errorElement.textContent = errorMessage;
-  errorElement.classList.add('form__input-error_active');
-};
-//функция удаления класса с ошибкой
-const hideInputError = (formElement, inputElement) => {
-  const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-  inputElement.classList.remove('form__input_type_error');
-  errorElement.classList.remove('form__input-error_active');
-  errorElement.textContent = '';
-};
-//функция проверки поля ввода на корректность введенных данных
-const checkInputValidity = (formElement, inputElement) => {
-  if (!inputElement.validity.valid) {
-    showInputError(formElement, inputElement, inputElement.validationMessage);
-  } else {
-    hideInputError(formElement, inputElement);
-  }
-};
-//функция принимающая параметром элемент формы и добавляющая ее полям нужные обработчки
-const setEventListeners = (formElement) => {
-  const inputList = Array.from(formElement.querySelectorAll('.form__input'));
-  const submitButton = formElement.querySelector('.form__submit');
-  toggleButtonState(inputList, submitButton);
-  inputList.forEach((inputElement) => {
-    inputElement.addEventListener('input', function () {
-      checkInputValidity(formElement, inputElement);
-      toggleButtonState(inputList, submitButton);
-    });
-  });
-};
-//функция перебора всех форм на странице
-const enableValidation = () => {
-  const formList = Array.from(document.querySelectorAll('.form'));
-  formList.forEach((formElement) => {
-    //cлушатель для формы
-    formElement.addEventListener('submit', function (evt) {
-      evt.preventDefault();
-    });
-    //слушатели для филдсетов
-    const fieldsetList = Array.from(formElement.querySelectorAll('.form__set'));
-    fieldsetList.forEach((fieldset) => {
-      setEventListeners(fieldset);
-    });
-  });
-};
-//функция для проверки наличия невалидного поля
-function hasInvalidInput(inputList) {
-  return inputList.some((inputElement) => {
-  return !inputElement.validity.valid;
-}); 
-};
-//функция включения и отключения кнопки
-function toggleButtonState(inputList, submitButton) {
-  if (hasInvalidInput(inputList)) {
-    submitButton.setAttribute('disabled', 'disablebutton');
-    submitButton.classList.add('form__submit_inactive');
-  } else {
-    submitButton.removeAttribute('disabled');
-    submitButton.classList.remove('form__submit_inactive');
-  }
-};
-
-enableValidation();
 
 //перенос данных из профиля в соответствующие инпуты
 const editProfileInfo = function () {
@@ -221,5 +155,6 @@ formElementCard.addEventListener('submit', (evt) => {
   evt.preventDefault();
   createEl(titleInput.value, linkInput.value);
   formElementCard.reset();
+  toggleButtonState(inputList, submitButton, validationClassList.inactiveButtonClass);
   closePopup(popupCards);
 });
