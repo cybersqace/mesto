@@ -35,19 +35,16 @@ cardFormValidator.enableValidation();
 
 //загрузка карточек из массива
 const renderInitialCards = (array) => { 
-  array.forEach((item) => { 
-    const card = new Card(item.name, item.link, '.cardtemp');
-    const cardElement = card.generateCard();
-
-    container.append(cardElement);
-  }) 
+  array.forEach((card) => {
+    container.append(createElement(card.name, card.link));
+  })
 };
 
 //добавление новой карточки пользователем 
-const createElement = (name, link) => { 
-  const card = new Card(name, link, '.cardtemp').generateCard(); 
-  container.prepend(card);
-};
+const createElement = (name, link) => {  
+  const card = new Card(name, link, '.cardtemp');
+  return card.generateCard();
+}
 
 renderInitialCards(initialCards);
 
@@ -124,7 +121,7 @@ formElementProfile.addEventListener('submit', (evt) => {
 
 formElementCard.addEventListener('submit', (evt) => {
   evt.preventDefault();
-  createElement(titleInput.value, linkInput.value);
+  container.prepend(createElement(titleInput.value, linkInput.value));
   formElementCard.reset();
   cardFormValidator.toggleButtonState();
   closePopup(popupCards);

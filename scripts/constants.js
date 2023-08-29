@@ -1,11 +1,11 @@
 export const initialCards = [
   {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    name: 'Красноярск',
+    link: 'https://imageup.ru/img166/4500390/bridge.jpg'
   },
   {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    name: 'Москва',
+    link: 'https://imageup.ru/img145/4500393/photo_2023-08-29_16-59-34-2.jpg'
   },
   {
     name: 'Иваново',
