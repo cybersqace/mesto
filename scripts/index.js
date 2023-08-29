@@ -2,7 +2,7 @@ import Card from './Card.js'
 import FormValidator from './FormValidator.js';
 import { initialCards, validationClassList } from './constants.js';
 const container = document.querySelector('.elements');
-
+const template = document.querySelector('.cardtemp');
 const popups = document.querySelectorAll('.popup');
 
 const popupProfile = document.querySelector('.popup_type_profile');
@@ -34,19 +34,29 @@ const cardFormValidator = new FormValidator(validationClassList, formElementCard
 cardFormValidator.enableValidation();
 
 //загрузка карточек из массива
-const renderInitialCards = (array) => {
-  array.forEach((item) => {
-    createElement(item.name, item.link);
-  })
+const renderInitialCards = (array) => { 
+  array.forEach((item) => { 
+    const card = new Card(item.name, item.link, '.cardtemp');
+    const cardElement = card.generateCard();
+
+    container.append(cardElement);
+  }) 
 };
 
-//добавление новой карточки пользователем
-const createElement = (name, link) => {
-  const card = new Card(name, link, '.cardtemp').generateCard();
+//добавление новой карточки пользователем 
+const createElement = (name, link) => { 
+  const card = new Card(name, link, '.cardtemp').generateCard(); 
   container.prepend(card);
 };
 
 renderInitialCards(initialCards);
+
+export function initOpenFullImage(link, name) { 
+    popupPicture.src = link;
+    popupPicture.alt = name;
+    popupPictureTitle.textContent = name;
+    openPopup(popupImage);
+};
 
 //функции открытия и закрытия попапов
 function openPopup (popup) {
