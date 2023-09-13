@@ -2,7 +2,7 @@ import './index.css'
 import Section from '../components/Section.js';
 import Card from '../components/Card.js'
 import FormValidator from '../components/FormValidator.js';
-import { initialCards, validationClassList, popupOpenProfButton, formElementProfile, nameInput, jobInput, popupOpenCardsButton, formElementCard } from '../components/constants.js';
+import { initialCards, validationClassList, popupOpenProfButton, formElementProfile, nameInput, jobInput, popupOpenCardsButton, formElementCard } from '../utils/constants.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import UserInfo from '../components/UserInfo.js';
@@ -37,10 +37,7 @@ cards.renderItems();
 const popupEditProfile = new PopupWithForm({
   popupSelector: '.popup_type_profile',
   submitForm: (dataForm) => {
-    editUserInfo.setUserInfo({
-      username: dataForm.username,
-      job: dataForm.job
-    });
+    editUserInfo.setUserInfo(dataForm);
     popupEditProfile.close();
   }
 });
@@ -75,7 +72,7 @@ function fillInputsProfilePopup({ username, job }) {
 //листенеры кнопок
 popupOpenProfButton.addEventListener('click', () => {
   const data = editUserInfo.getUserInfo();
-  fillInputsProfilePopup({
+  fillInputsProfilePopup({ 
     username: data.username,
     job: data.job
   });
@@ -84,4 +81,5 @@ popupOpenProfButton.addEventListener('click', () => {
 
 popupOpenCardsButton.addEventListener('click', () => {
   popupAddCard.open();
+  cardFormValidator.toggleButtonState();
 })
