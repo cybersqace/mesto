@@ -5,18 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Интерактивный сайт Mesto - это учебный проект для Яндекс.Практикум, который позволяет делиться фотографиями, редактировать профиль, ставить лайки.">
   <meta name="author" content="Илья Корольков">
-  <link rel="stylesheet" href="pages/index.css">
-  <link rel="icon" href="images/favicon.png">
+  <link rel="icon" href="<%=require('./images/favicon.png')%>">
   <title lang="en">Mesto</title>
 </head>
 <body class="page">
   <header class="header">
-    <img src="images/logo.svg" class="header__logo" alt="лого">
+    <img src="<%=require('./images/logo.svg')%>" class="header__logo" alt="лого">
   </header>
   <main class="content">
     <section class="profile">
       <div class="profile__content">
-        <img src="images/avatar.jpg" class="profile__avatar" alt="аватар">
+        <img src="<%=require('./images/avatar.jpg')%>" class="profile__avatar" alt="аватар">
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <button type="button" class="profile__edit-button" aria-label="кнопка редактирования" title="редактировать"></button>
@@ -39,9 +38,9 @@
       <h2 class="popup__title">Редактировать профиль</h2>
       <form class="form form-personal" name="profileEdit" novalidate>
         <fieldset class="form__set">
-          <input type="text" minlength="2" maxlength="40" id="user-name" name="profileName" class="form__input form__input_type_username" placeholder="Имя" required>
+          <input type="text" minlength="2" maxlength="40" id="user-name" name="username" class="form__input form__input_type_username" placeholder="Имя" required>
           <span id="user-name-error" class="form__input-error"></span>
-          <input type="text" minlength="2" maxlength="200" id="about" name="profileJob" class="form__input form__input_type_about" placeholder="О себе" required>
+          <input type="text" minlength="2" maxlength="200" id="about" name="job" class="form__input form__input_type_about" placeholder="О себе" required>
           <span id="about-error" class="form__input-error"></span>
           <button type="submit" class="form__submit" disabled>Сохранить</button>
         </fieldset>
@@ -54,9 +53,9 @@
       <h2 class="popup__title">Новое место</h2>
       <form class="form form-cards" name="cardCreate" novalidate>
         <fieldset class="form__set">
-          <input type="text" minlength="2" maxlength="30" id="card-name" name="cardName" class="form__input form__input_type_title" placeholder="Название" required>
+          <input type="text" minlength="2" maxlength="30" id="card-name" name="name" class="form__input form__input_type_title" placeholder="Название" required>
           <span id="card-name-error" class="form__input-error"></span>
-          <input type="url" name="cardLink" id="card-link" class="form__input form__input_type_link" placeholder="Ссылка на картинку" required>
+          <input type="url" name="link" id="card-link" class="form__input form__input_type_link" placeholder="Ссылка на картинку" required>
           <span id="card-link-error" class="form__input-error"></span>
           <button type="submit" class="form__submit" disabled>Создать</button>
         </fieldset>
@@ -82,6 +81,5 @@
         <button type="button" class="element__delete-button" aria-label="кнопка удаления"></button>
     </li>
   </template>
-  <script type="module" src="./scripts/index.js"></script>
 </body>
 </html>

@@ -1,10 +1,11 @@
-import { initOpenFullImage } from './index.js';
 export default class Card {
-  constructor(name, link, templateSelector) {
+  constructor({data, handleCardClick}, templateSelector) {
     this._container = document.querySelector(templateSelector);
     this._templateSelector = templateSelector;
-    this._name = name;
-    this._link = link;
+    this._imageName = data.name;
+    this._name = data.name;
+    this._link = data.link;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -25,7 +26,7 @@ export default class Card {
 
   _setEventListeners() {
     this._cardImage.addEventListener('click', () => {
-      initOpenFullImage(this._cardImage.src, this._cardImage.alt);
+      this._handleCardClick(this._name, this._link);
     })
     this._element.querySelector('.element__like-button').addEventListener('click', () => {
       this._handleLikeCard();
