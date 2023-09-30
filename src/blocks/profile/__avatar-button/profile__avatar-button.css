@@ -9,6 +9,7 @@
   border-radius: 50%;
   opacity: 0;
   transition: 1s ease-in-out;
+  cursor: pointer;
 }
 
 .profile__avatar-button:hover {

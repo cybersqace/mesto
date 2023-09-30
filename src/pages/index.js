@@ -138,7 +138,7 @@ const addCardPopup = new PopupWithForm({
     addCardPopup.renderLoading(true);
     api.addCard(formData)
       .then((formData) => {
-        cards.addItem(createElement(formData));
+        cards.addNewCard(createElement(formData));
         addCardPopup.close();
       })
       .catch((err) => {
