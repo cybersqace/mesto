@@ -7,9 +7,9 @@ export const popupOpenProfButton = document.querySelector('.profile__edit-button
 export const popupCloseProfButton = popupProfile.querySelector('.popup__close');
 export const formElementProfile = document.querySelector('.form-personal');
 export const nameInput = formElementProfile.querySelector('.form__input_type_username');
-export const jobInput = formElementProfile.querySelector('.form__input_type_about');
+export const aboutInput = formElementProfile.querySelector('.form__input_type_about');
 export const username = '.profile__title';
-export const job = '.profile__description';
+export const about = '.profile__description';
 
 export const popupCards = document.querySelector('.popup_type_cards');
 export const popupOpenCardsButton = document.querySelector('.profile__add-button');
@@ -23,32 +23,9 @@ export const popupPicture = document.querySelector('.popup__picture');
 export const popupPictureTitle = document.querySelector('.popup__picture-title');
 export const popupClosePictureButton = popupImage.querySelector('.popup__close');
 
-export const initialCards = [
-  {
-    name: 'Красноярск',
-    link: 'https://imageup.ru/img166/4500390/bridge.jpg'
-  },
-  {
-    name: 'Москва',
-    link: 'https://imageup.ru/img145/4500393/photo_2023-08-29_16-59-34-2.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
+export const formElementAvatar = document.querySelector('.form-avatar');
+export const updateAvatarButton = document.querySelector('.profile__avatar-button');
+export const avatar = document.querySelector('.profile__avatar');
 
 export const validationClassList = {
   inputClass: 'form__input',

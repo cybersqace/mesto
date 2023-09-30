@@ -1,11 +1,5 @@
 .element__group {
-  margin: 0 auto;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding-top: 25px;
-  padding-bottom: 31px;
-  max-width: 246px;
-  max-height: 23px;
 }
